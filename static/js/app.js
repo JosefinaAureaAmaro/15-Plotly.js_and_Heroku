@@ -4,8 +4,13 @@ function buildMetadata(sample) {
 
   // Use `d3.json` to fetch the metadata for a sample
   var url = "/metadata/<sample>"
+  var data = [];
+
+  data[0] = d3.json(url).then(function(response){
+    console.log(response); 
+  });
     // Use d3 to select the panel with id of `#sample-metadata`
-    d3.select(#sample-metadata)
+    d3.select("#sample-metadata")
     // Use `.html("") to clear any existing metadata
 
     // Use `Object.entries` to add each key and value pair to the panel
